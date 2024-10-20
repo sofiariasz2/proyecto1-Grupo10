@@ -5,7 +5,7 @@ public class RecursoEducativo extends Actividad {
 
     // Constructor que acepta los parámetros necesarios
     public RecursoEducativo(String descripcion, String objetivo, int duracionEsperada, String recurso) {
-        super(descripcion, objetivo, duracionEsperada);
+        super(descripcion, objetivo, null, duracionEsperada, null);  // Llama al constructor de la clase padre
         this.recurso = recurso;
     }
 
@@ -19,15 +19,14 @@ public class RecursoEducativo extends Actividad {
         this.recurso = recurso;
     }
 
-    // Método que devuelve los detalles del recurso como un String, en lugar de imprimirlo
+    // Método que devuelve los detalles del recurso como un String
+    @Override
     public String obtenerDetalles() {
         return "Recurso Educativo: " + getDescripcion() +
                "\nObjetivo: " + getObjetivo() +
                "\nDuración esperada: " + getDuracionEsperada() + " minutos" +
                "\nEnlace/Referencia: " + recurso;
     }
-
-	
-	}
+}
 
 
