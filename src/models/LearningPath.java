@@ -16,6 +16,7 @@ public class LearningPath {
     private String fechaCreacion;
     private String fechaModificacion;
     private float rating;
+    private float sumaAnterior;
     private float sumaRating;
 
     // Constructor
@@ -33,6 +34,7 @@ public class LearningPath {
         this.fechaModificacion = fechaCreacion;
         this.rating = 0;
         this.sumaRating = 0;
+        this.sumaAnterior = 0;
     }
 
     // Métodos para gestionar feedback, actividades y la información del Learning Path
@@ -137,6 +139,14 @@ public class LearningPath {
     public String getFechaModificacion() {
         return fechaModificacion;
     }
+    
+    public float getSumaAnterior() {
+    	return sumaAnterior;
+    }
+    
+    public void setSumaAnterior(float param) {
+    	this.sumaAnterior = param;
+    }
 
     public String getFechaCreacion() {
         return fechaCreacion;
@@ -144,5 +154,9 @@ public class LearningPath {
 
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+    
+    public void setRating(float param) {
+    	this.rating = param;
     }
 }

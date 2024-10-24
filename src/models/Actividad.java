@@ -3,6 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public abstract class Actividad {
     protected String descripcion;
     protected String objetivo;
@@ -13,11 +14,12 @@ public abstract class Actividad {
     protected boolean obligatorioOpcional;
     protected int resultado;
     protected float rating;
+    protected String titulo;
     private float sumaRating;//PARA QUE NATA HAGA LO DEL PROMEDIO DE LAS RESEÑAS
     protected String creador;
 
     // Constructor
-    public Actividad(String descripcion, String objetivo, String nivelDificultad, int duracionEsperada, String creador) {
+    public Actividad(String descripcion, String objetivo, String nivelDificultad, int duracionEsperada, String creador, String titulo) {
         this.descripcion = descripcion;
         this.objetivo = objetivo;
         this.nivelDificultad = nivelDificultad;
@@ -27,6 +29,7 @@ public abstract class Actividad {
         this.resultado = 0;
         this.sumaRating = 0;
         this.creador = creador;
+        this.titulo= titulo;
     }
 
     // Método para obtener el resultado de la actividad
@@ -58,7 +61,9 @@ public abstract class Actividad {
             }
         }
         return true;
-    }
+        
+    }    
+    
 
     // Getters y Setters
     public int getDuracionEsperada() {
@@ -87,4 +92,8 @@ public abstract class Actividad {
 
     //implementado por las subclases para obtener los detalles de la actividad
     public abstract String obtenerDetalles();
+
+	public String getTitulo() {
+		return titulo;
+	}
 }
